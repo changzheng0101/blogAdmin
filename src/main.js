@@ -4,12 +4,14 @@ import VueRouter from 'vue-router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import leftMenu from '/src/layout/left-menu'
+import headerView from '/src/layout/header-view'
 
 Vue.use(VueRouter)
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 //注册全局的组件
-Vue.component("leftMenu", leftMenu)
+Vue.component("leftMenu", leftMenu);
+Vue.component("headerView", headerView);
 
 //导入组件
 // const home = () => import("@/components/home");
@@ -55,7 +57,7 @@ export const routes = [
             //仪表盘
             {
                 path: "/index",
-                hidden: "false",
+                hidden: false,
                 name: "首页",
                 icon: "el-icon-s-home",
                 component: index
@@ -63,34 +65,34 @@ export const routes = [
             //内容
             {
                 path: "/content",
-                hidden: "false",
+                hidden: false,
                 name: "内容",
                 icon: "el-icon-files",
                 component: rightView,
                 children: [
                     {
                         path: "post-article",
-                        hidden: "false",
+                        hidden: false,
                         name: "发表文章",
                         icon: "el-icon-position",
                         component: postArticle
                     },
                     {
                         path: "manage-article",
-                        hidden: "false",
+                        hidden: false,
                         name: "管理文章",
                         icon: "el-icon-s-management",
                         component: articleManage
                     },
                     {
                         path: "manage-comment",
-                        hidden: "false",
+                        hidden: false,
                         name: "评论管理",
                         icon: "el-icon-chat-dot-square",
                         component: commentManage
                     }, {
                         path: "manage-images",
-                        hidden: "false",
+                        hidden: false,
                         name: "图片管理",
                         icon: "el-icon-picture-outline",
                         component: imageManage
@@ -100,34 +102,34 @@ export const routes = [
             //用户相关
             {
                 path: "/user",
-                hidden: "false",
+                hidden: false,
                 name: "用户中心",
                 icon: "el-icon-user",
                 component: rightView,
                 children: [
                     {
                         path: "email",
-                        hidden: "false",
+                        hidden: false,
                         name: "邮箱管理",
                         icon: "el-icon-message",
                         component: email
                     },
                     {
                         path: "reset-password",
-                        hidden: "false",
+                        hidden: false,
                         name: "重置密码",
                         icon: "el-icon-lock",
                         component: resetPassword
                     },
                     {
                         path: "info",
-                        hidden: "false",
+                        hidden: false,
                         name: "账户信息",
                         icon: "el-icon-zoom-in",
                         component: info
                     }, {
                         path: "list",
-                        hidden: "false",
+                        hidden: false,
                         name: "用户列表",
                         icon: "el-icon-user",
                         component: list
@@ -137,21 +139,21 @@ export const routes = [
             //运营相关
             {
                 path: "/operation",
-                hidden: "false",
+                hidden: false,
                 name: "运营",
                 icon: "el-icon-video-play",
                 component: rightView,
                 children: [
                     {
                         path: "looper-manage",
-                        hidden: "false",
+                        hidden: false,
                         name: "轮播图管理",
                         icon: "el-icon-folder-opened",
                         component: looperManage
                     },
                     {
                         path: "category-manage",
-                        hidden: "false",
+                        hidden: false,
                         name: "分类管理",
                         icon: "el-icon-pie-chart",
                         component: categoryManage
@@ -161,21 +163,21 @@ export const routes = [
             //设置相关
             {
                 path: "/settings",
-                hidden: "false",
+                hidden: false,
                 name: "设置",
                 icon: "el-icon-setting",
                 component: rightView,
                 children: [
                     {
                         path: "friend-link",
-                        hidden: "false",
+                        hidden: false,
                         name: "友情链接",
                         icon: "el-icon-link",
                         component: friendLink
                     },
                     {
                         path: "website-info",
-                        hidden: "false",
+                        hidden: false,
                         name: "网站信息",
                         icon: "el-icon-coin",
                         component: websiteInfo

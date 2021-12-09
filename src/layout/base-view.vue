@@ -2,19 +2,18 @@
   <div id="app">
     <!--    显示我们的内容-->
     <el-container>
-      <el-header id="admin-header-box">顶部内容</el-header>
+      <el-header id="admin-header-box">
+        <header-view></header-view>
+      </el-header>
       <el-container>
         <el-aside id="left-menu-list-box" width="200px">
           <left-menu></left-menu>
         </el-aside>
-        <el-container>
-          <el-main>
-            <div class="content">
-              <router-view></router-view>
-            </div>
-          </el-main>
-          <el-footer>Footer</el-footer>
-        </el-container>
+        <el-main>
+          <div class="content">
+            <router-view></router-view>
+          </div>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -33,23 +32,23 @@ export default {
 
 </script>
 <style>
-.el-header, .el-footer {
+.el-header {
   background-color: dodgerblue;
-  color: #333;
-  text-align: center;
   line-height: 46px;
   height: 46px !important;
 }
-
+.el-menu-item.is-active{
+  color: #303133;
+}
 .el-aside {
-  background-color: #D3DCE6;
+  line-height: 200px;
+  border-right: solid 1px #e6e6e6;
   color: #333;
 }
 
-.el-main {
-  background-color: #E9EEF3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
+.el-main{
+  padding: 0px;
 }
+
+
 </style>
